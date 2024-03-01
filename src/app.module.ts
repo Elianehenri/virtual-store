@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { JwtAuthGuard } from './auth/guards/jwt.guards';
 import { APP_GUARD } from '@nestjs/core';
+import { ProductModule } from './product/product.module';
 
 
 @Module({
@@ -12,7 +13,7 @@ import { APP_GUARD } from '@nestjs/core';
     ConfigModule.forRoot(),//configuraçao da env
     MongooseModule.forRoot(process.env.DATABASE_URL),//conectar no banco mongo
     AuthModule, 
-    UserModule,
+    UserModule, ProductModule,
   ],
   controllers: [],
   providers: [
@@ -20,3 +21,6 @@ import { APP_GUARD } from '@nestjs/core';
   ],
 })
 export class AppModule {}
+
+
+//o nest trabalha sempre com module

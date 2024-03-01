@@ -57,4 +57,9 @@ export class UserService {
       async updateUser(id: string, dto: UpdateUserDto) {
         return await this.userModel.findByIdAndUpdate(id, dto);
       }
+
+      //deletar usuario
+      async deleteUser(id: string) {
+        return await this.userModel.findByIdAndDelete(id);
+      }
 }
